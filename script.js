@@ -6,6 +6,8 @@ function getComputerChoice(){
 let playerScore = 0;
 let computerScore = 0;
 
+alert("Let's play Rock-Paper-Scissors. First one to 5 wins!");
+
 function playRound(playerSelection, computerSelection) {
 computerSelection = getComputerChoice();
 playerSelection = prompt("Please choose rock, paper or scissors.").toLowerCase();
@@ -38,11 +40,11 @@ if (playerSelection == computerSelection){
             computerScore += 1;
         }
     }   
-    console.log("player:" + playerSelection + " computer:" + computerSelection + " Result:" + result)
+    console.log("Player:" + playerSelection + " Computer:" + computerSelection + " Result:" + result + "|| Playerscore:" + playerScore + " Computerscore:" + computerScore)
 }
 
 function game(){
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; playerScore < 5 && computerScore < 5; i++){
         playRound();
     } if (playerScore == computerScore) {
         console.log("No Winner! This game ends in a draw.");
