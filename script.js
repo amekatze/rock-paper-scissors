@@ -5,13 +5,14 @@ function getComputerChoice(){
 
 let playerScore = 0;
 let computerScore = 0;
+let round = 0;
 
-alert("Let's play Rock-Paper-Scissors. Best of 5!");
+document.getElementById("test").innerHTML = "Let's play rock paper scissors! Best of 5!";
 
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
 computerSelection = getComputerChoice();
-playerSelection = prompt("Please choose rock, paper or scissors.").toLowerCase();
+//playerSelection = prompt("Please choose rock, paper or scissors.").toLowerCase();
 
 //player win
 if (playerSelection == "rock" && computerSelection == "scissors" ||
@@ -29,19 +30,23 @@ computerSelection == "paper" && playerSelection == "rock") {
 } else {
     roundWinner = "draw";
 }
-
-console.log(computerScore, playerScore, roundWinner);
+if (round < 4){
+    round += 1;
+    document.getElementById("test").innerHTML = "<b> ROUND</b>:" + round + "<br/>" + "Player: " + playerScore + " Comp: " + computerScore + "<br>" + "Player: " + playerSelection + " Comp: " + computerSelection + "<br>" + "Round winner: " + roundWinner;
+} else {
+winner = playerScore == computerScore ? "no one, it's a draw!" :
+playerScore > computerScore ? "player" : "computer"
+document.getElementById("test").innerHTML = "<b> ROUND</b>:" + 5 + "<br>" + "Player: " + playerScore + " Comp: " + computerScore + "<br>" + "The winner is ..." + winner;
+playerScore = 0;
+computerScore = 0;
+round = 0;
+}
 }
 
-function game() {
-    let i = 0;
-   while (i < 5){
-    playRound();
-    i++;
-} 
-   winner = playerScore == computerScore ? "no one, it's a draw!" :
-   playerScore > computerScore ? "player" : "computer"
-   console.log("The winner is " + winner);
-}
 
-game();
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener("click", () =>{
+        playRound(button.value);
+    })
+})
