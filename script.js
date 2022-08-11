@@ -6,54 +6,42 @@ function getComputerChoice(){
 let playerScore = 0;
 let computerScore = 0;
 
-alert("Let's play Rock-Paper-Scissors. First one to 5 wins!");
+alert("Let's play Rock-Paper-Scissors. Best of 5!");
+
 
 function playRound(playerSelection, computerSelection) {
 computerSelection = getComputerChoice();
 playerSelection = prompt("Please choose rock, paper or scissors.").toLowerCase();
-if (playerSelection == computerSelection){
-    result = "draw";
-    } else if (playerSelection == "rock"){
-        if (computerSelection == "paper") {
-            result = "loss";
-            computerScore += 1;
-        } else if (computerSelection == "scissors"){
-            result = "win";
-            playerScore += 1;
-        }
 
-    } else if (playerSelection == "paper"){
-        if (computerSelection == "rock") {
-            result = "win";
-            playerScore += 1;
-        } else if (computerSelection == "scissors"){
-            result = "loss";
-            computerScore += 1;
-        }
-
-    } else if (playerSelection == "scissors"){
-        if (computerSelection == "paper") {
-            result = "win";
-            playerScore += 1;
-        } else if (computerSelection == "rock"){
-            result = "loss";
-            computerScore += 1;
-        }
-    }   
-    console.log("Player:" + playerSelection + " Computer:" + computerSelection + " Result:" + result + "|| Playerscore:" + playerScore + " Computerscore:" + computerScore)
+//player win
+if (playerSelection == "rock" && computerSelection == "scissors" ||
+playerSelection == "scissors" && computerSelection == "paper" ||
+playerSelection == "paper" && computerSelection == "rock") {
+    playerScore ++;
+    roundWinner = "player";
+} else
+//computer win
+if (computerSelection == "rock" && playerSelection == "scissors" ||
+computerSelection == "scissors" && playerSelection == "paper" ||
+computerSelection == "paper" && playerSelection == "rock") {
+    computerScore ++;
+    roundWinner = "computer";
+} else {
+    roundWinner = "draw";
 }
 
-function game(){
-    for (let i = 0; playerScore < 5 && computerScore < 5; i++){
-        playRound();
-    } if (playerScore == computerScore) {
-        console.log("No Winner! This game ends in a draw.");
-    } else if (playerScore > computerScore) {
-        console.log ("You win this game! Good job.");
-    } else if (playerScore < computerScore) {
-        console.log("You lose. Better luck next time.");
-    }
+console.log(computerScore, playerScore, roundWinner);
+}
+
+function game() {
+    let i = 0;
+   while (i < 5){
+    playRound();
+    i++;
+} 
+   winner = playerScore == computerScore ? "no one, it's a draw!" :
+   playerScore > computerScore ? "player" : "computer"
+   console.log("The winner is " + winner);
 }
 
 game();
-
