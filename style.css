@@ -1,0 +1,101 @@
+body {
+    background-color: rgb(69, 69, 69);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: rgb(245, 245, 245);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.container {
+    margin-top: 20%;
+    display: flex;
+    height: 300px;
+    width: 330px;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+.weapon {
+    border-radius: 50%;
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .2s;
+    box-shadow: 0 0 30px 1px rgba(22, 22, 22, 0.75);
+}
+.weapon#rock{
+    margin: 0 70px 0 70px;
+}
+
+.weapon img {
+    width: 50px;
+}
+
+
+.weapon:hover{
+    transform: rotate(90deg);
+    border: 3px solid orange;
+    width: 94px;
+    height: 94px;
+}
+
+.active {
+    border: 3px solid orange;
+    width: 94px;
+    height: 94px;
+}
+
+.comp {
+    outline: 3px dotted rgb(43, 227, 255);
+    outline-offset: 6px;
+}
+
+.game-stats {
+    width: 330px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.player-tag, .computer-tag{
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.player-tag{
+border-bottom:3px solid orange;
+}
+.computer-tag{
+border-bottom:3px dotted rgb(43, 227, 255);
+}
+
+
+.stats-panel{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#rounds {
+    position: fixed;
+    top:10px;
+    left: 10px;
+
+}
+
+
+
+
+
+
+
+#test {
+    position: fixed;
+    bottom:0;
+}

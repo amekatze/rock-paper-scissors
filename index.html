@@ -8,14 +8,27 @@
     <title>Document</title>
 </head>
 <body>
-<br>
-    <button value="rock">rock</button>
-    <button value="paper">paper</button>
-    <button value="scissors">scissors</button>
-<br>
-<br>
 
-    <div id="test"> test</div>
+<div id="rounds">Start the game by clicking on your choice of weapon.</div>
+
+<div class="container">
+    <div class="weapon" id="rock"><img src="icons8-rock-100.png"></div>
+    <div class="weapon" id="paper"><img src="icons8-paper-100.png"></div>
+    <div class="weapon" id="scissors"><img src="icons8-scissors-100.png"></div>
+</div>
+
+<div class="game-stats">
+    <div class="stats-panel">
+        <div class="player-tag">Player</div>
+        <span id="player-score"></span>
+    </div>
+    <div class="stats-panel">
+    <div class="computer-tag">Computer</div>
+    <span id="computer-score"></span>
+    </div>
+</div>
+
+<div id="test"> test</div>
 
 
    <script src="script.js" defer></script>
