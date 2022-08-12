@@ -6,6 +6,7 @@ body {
     color: rgb(245, 245, 245);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.5em;
+    text-align: center;
 }
 
 .container {
@@ -20,16 +21,14 @@ body {
 }
 
 #rounds {
- width: 100%;
- background-color: black;
- padding: 0.5em 0;
- text-align: center;
+    width: 100%;
+    background-color: black;
+    padding: 0.5em 0;
 }
 
 #result {
-width: 100%;
-margin-top: 1.5em;
-text-align: center;
+    width: 100%;
+    margin-top: 1.5em;
 }
 
 .weapon-container {
@@ -87,37 +86,22 @@ text-align: center;
     grid-gap: 10px;
 }
 .game-stats-header{
-grid-column: span 2;
-text-align: center;
-background-color: black;
+    grid-column: span 2;
+    background-color: black;
 }
 
 .player-tag, .computer-tag{
-    text-align: center;
     line-height: 40px;
     margin-bottom: 20px;
 }
 
 .player-tag{
-border-bottom:3px solid orange;
+    border-bottom:3px solid orange;
 }
 .computer-tag{
-border-bottom:3px dotted rgb(43, 227, 255);
+    border-bottom:3px dotted rgb(43, 227, 255);
 }
 
 .stats-panel{
-    text-align: center;
     margin-top: 20px;
-}
-
-
-
-
-
-
-
-#test {
-    font-size: 0.5em;
-    position: fixed;
-    bottom:0;
 }
