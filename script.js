@@ -8,8 +8,7 @@ let playerScore = 0;
 let computerScore = 0;
 let round = 0;
 
-document.getElementById("test").innerHTML = "Let's play rock paper scissors! Best of 5!";
-
+let roundResult = document.getElementById('result');
 
 function playRound(playerSelection) {
 computerSelection = getComputerChoice();
@@ -36,20 +35,28 @@ computerSelection == "paper" && playerSelection == "rock") {
 if (round < 4){
     round++;
 
-    document.getElementById("test").innerHTML = "<b> ROUND</b>:" + round + "<br/>" + "Player: " + playerScore + " Comp: " + computerScore + "<br>" + "Player: " + playerSelection + " Comp: " + computerSelection + "<br>" + "Round winner: " + roundWinner;
+    roundWinner == "player" ? roundResult.innerHTML = "Player wins the round!" :
+    roundWinner == "computer" ? roundResult.innerHTML = "Computer wins the round!" :
+    roundResult.innerHTML = "It's a draw!";
 
     document.getElementById("player-score").innerHTML = playerScore;
     document.getElementById("computer-score").innerHTML = computerScore;
-    document.getElementById("rounds").innerHTML = "Round: " + round;
+    document.getElementById("rounds").innerHTML = "Round: " + round + "/ 5"
 
     weapons.forEach((weapon) => { weapon.classList.remove('active');})
 
 } else {
 round++;
-winner = playerScore == computerScore ? "no one, it's a draw!" :
+
+winner = playerScore == computerScore ? "draw" :
 playerScore > computerScore ? "player" : "computer";
 
-document.getElementById("test").innerHTML = "<b> ROUND</b>:" + round + "<br>" + "Player: " + playerScore + " Comp: " + computerScore + "<br>" + "The winner is ..." + winner;
+winner == "player" ? roundResult.innerHTML = "Player wins the game!" :
+winner == "computer" ? roundResult.innerHTML = "Computer wins the game!" :
+roundResult.innerHTML = "It's a draw!";
+
+document.getElementById("rounds").innerHTML = "Round: " + round + "/ 5";
+
 weapons.forEach((weapon) => { weapon.classList.remove('active');})
 
 playerScore = 0;
